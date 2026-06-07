@@ -1,0 +1,181 @@
+/* ============================================================
+   SIGNALS DESIGN SYSTEM — Foundations
+   Warm-canvas editorial interface for an AI product.
+   cream canvas · coral CTA · dark navy product surfaces ·
+   editorial serif display · humanist-grotesque body
+   ============================================================
+
+   FONTS — substitutes (see README "Font substitutions"):
+     Display serif  Copernicus / Tiempos Headline → Newsreader
+     Body / UI sans StyreneB                       → Inter
+     Mono           JetBrains Mono                  → JetBrains Mono (exact)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ---- FONT FAMILIES ------------------------------------ */
+  --font-serif: 'Newsreader', 'Tiempos Headline', Garamond, 'Times New Roman', serif;
+  --font-sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono:  'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* ============================================================
+     COLORS
+     ============================================================ */
+
+  /* ---- Brand & accent ---- */
+  --primary:           #cc785c;  /* signature warm coral — primary CTA */
+  --primary-active:    #a9583e;  /* press / darker */
+  --primary-disabled:  #e6dfd8;  /* desaturated cream-tinted */
+  --accent-teal:       #5db8a6;  /* sparse: status dots, active connection */
+  --accent-amber:      #e8a55a;  /* category badges, inline highlight */
+
+  /* ---- Text / ink ---- */
+  --ink:               #141413;  /* headlines + primary text */
+  --body-strong:       #252523;  /* lead / emphasized paragraphs */
+  --body:              #3d3d3a;  /* default running text */
+  --muted:             #6c6a64;  /* sub-heads, breadcrumbs */
+  --muted-soft:        #8e8b82;  /* captions, fine-print */
+  --on-primary:        #ffffff;  /* text on coral */
+  --on-dark:           #faf9f5;  /* cream-white on dark surfaces */
+  --on-dark-soft:      #a09d96;  /* secondary text on dark */
+
+  /* ---- Surfaces (cream family) ---- */
+  --canvas:               #faf9f5; /* default page floor — tinted cream */
+  --surface-soft:         #f5f0e8; /* soft band / divider */
+  --surface-card:         #efe9de; /* feature/content cards */
+  --surface-cream-strong: #e8e0d2; /* selected tabs, emphasized bands */
+
+  /* ---- Surfaces (dark family) ---- */
+  --surface-dark:          #181715; /* code mockups, footer */
+  --surface-dark-elevated: #252320; /* elevated cards inside dark */
+  --surface-dark-soft:     #1f1e1b; /* inner code block bg */
+
+  /* ---- Hairlines ---- */
+  --hairline:      #e6dfd8; /* 1px border on cream surfaces */
+  --hairline-soft: #ebe6df; /* barely-visible in-band divider */
+  --hairline-dark: #2c2a27; /* divider on dark surfaces */
+
+  /* ---- Semantic ---- */
+  --success: #5db872;
+  --warning: #d4a017;
+  --error:   #c64545;
+
+  /* ============================================================
+     SPACING — base unit 4px
+     ============================================================ */
+  --space-xxs: 4px;
+  --space-xs:  8px;
+  --space-sm:  12px;
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  32px;
+  --space-xxl: 48px;
+  --space-section: 96px;
+
+  /* ============================================================
+     RADII
+     ============================================================ */
+  --radius-xs:  4px;
+  --radius-sm:  6px;
+  --radius-md:  8px;   /* buttons, inputs, tabs */
+  --radius-lg:  12px;  /* content + product cards */
+  --radius-xl:  16px;  /* hero illustration container */
+  --radius-pill: 9999px;
+  --radius-full: 9999px;
+
+  /* ============================================================
+     ELEVATION — color-block first, shadow rare
+     ============================================================ */
+  --shadow-hover: 0 1px 3px rgba(20, 20, 19, 0.08);
+  --shadow-soft:  0 2px 8px rgba(20, 20, 19, 0.06);
+  --focus-ring:   0 0 0 3px rgba(204, 120, 92, 0.15); /* coral @ 15% */
+
+  /* ---- Layout ---- */
+  --content-max: 1200px;
+}
+
+/* ============================================================
+   TYPOGRAPHY SCALE — semantic helpers
+   Display = serif 400 + negative tracking (NEVER bold).
+   Body / UI = sans 400–500. Code = mono 400.
+   ============================================================ */
+
+/* ---- Display (serif) ---- */
+.t-display-xl, .ds-h1 {
+  font-family: var(--font-serif);
+  font-size: 64px; font-weight: 400; line-height: 1.05;
+  letter-spacing: -1.5px; color: var(--ink);
+}
+.t-display-lg, .ds-h2 {
+  font-family: var(--font-serif);
+  font-size: 48px; font-weight: 400; line-height: 1.1;
+  letter-spacing: -1px; color: var(--ink);
+}
+.t-display-md, .ds-h3 {
+  font-family: var(--font-serif);
+  font-size: 36px; font-weight: 400; line-height: 1.15;
+  letter-spacing: -0.5px; color: var(--ink);
+}
+.t-display-sm, .ds-h4 {
+  font-family: var(--font-serif);
+  font-size: 28px; font-weight: 400; line-height: 1.2;
+  letter-spacing: -0.3px; color: var(--ink);
+}
+
+/* ---- Titles / labels (sans) ---- */
+.t-title-lg {
+  font-family: var(--font-sans);
+  font-size: 22px; font-weight: 500; line-height: 1.3; color: var(--ink);
+}
+.t-title-md {
+  font-family: var(--font-sans);
+  font-size: 18px; font-weight: 500; line-height: 1.4; color: var(--ink);
+}
+.t-title-sm {
+  font-family: var(--font-sans);
+  font-size: 16px; font-weight: 500; line-height: 1.4; color: var(--ink);
+}
+
+/* ---- Body (sans) ---- */
+.t-body-md, .ds-p {
+  font-family: var(--font-sans);
+  font-size: 16px; font-weight: 400; line-height: 1.55; color: var(--body);
+}
+.t-body-sm {
+  font-family: var(--font-sans);
+  font-size: 14px; font-weight: 400; line-height: 1.55; color: var(--body);
+}
+
+/* ---- Captions / tags (sans) ---- */
+.t-caption {
+  font-family: var(--font-sans);
+  font-size: 13px; font-weight: 500; line-height: 1.4; color: var(--muted);
+}
+.t-caption-upper {
+  font-family: var(--font-sans);
+  font-size: 12px; font-weight: 500; line-height: 1.4;
+  letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted);
+}
+
+/* ---- Code (mono) ---- */
+.t-code, .ds-code {
+  font-family: var(--font-mono);
+  font-size: 14px; font-weight: 400; line-height: 1.6;
+}
+
+/* ---- Interactive labels (sans) ---- */
+.t-button   { font-family: var(--font-sans); font-size: 14px; font-weight: 500; line-height: 1; }
+.t-nav-link { font-family: var(--font-sans); font-size: 14px; font-weight: 500; line-height: 1.4; }
+
+/* ============================================================
+   ELEMENT DEFAULTS — opt-in via .ds-prose on a container
+   ============================================================ */
+.ds-prose { color: var(--body); font-family: var(--font-sans); }
+.ds-prose h1 { font-family: var(--font-serif); font-size: 64px; font-weight: 400; line-height: 1.05; letter-spacing: -1.5px; color: var(--ink); }
+.ds-prose h2 { font-family: var(--font-serif); font-size: 48px; font-weight: 400; line-height: 1.1; letter-spacing: -1px; color: var(--ink); }
+.ds-prose h3 { font-family: var(--font-serif); font-size: 36px; font-weight: 400; line-height: 1.15; letter-spacing: -0.5px; color: var(--ink); }
+.ds-prose p  { font-size: 16px; line-height: 1.55; color: var(--body); }
+.ds-prose a  { color: var(--primary); text-decoration: none; }
+.ds-prose a:active { text-decoration: underline; }
+.ds-prose code { font-family: var(--font-mono); font-size: 0.9em; }
