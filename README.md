@@ -12,8 +12,8 @@ site/
 ├── index.html            # the whole page (nav, hero, case studies, about, contact…)
 ├── styles.css            # page styles
 ├── colors_and_type.css   # design tokens — colors, type, spacing (Signals design system)
-├── image-slot.js         # drag-and-drop headshot placeholder web component
 └── assets/
+    ├── headshot.jpg            # About-section photo
     ├── signals-mark.svg        # brand spark mark (dark surfaces use the -light variant)
     ├── signals-mark-light.svg
     └── illustration-orbital.svg
@@ -45,9 +45,8 @@ Drop the contents of `site/` onto any static host:
   It loads from Tally's CDN and needs an internet connection. The auto-resize is handled by
   Tally's `embed.js`, loaded at the bottom of `index.html`.
 - **Book-a-call buttons** link to Calendly (`calendly.com/rinikothari03/intro-call`).
-- **Headshot** — the About section uses a drag-and-drop image slot. To ship a fixed photo
-  instead, replace the `<image-slot>` element in `index.html` with a standard
-  `<img src="assets/headshot.jpg" …>`.
+- **Headshot** — `assets/headshot.jpg`, shown in the About section. To swap it, replace that
+  file (keep the name) or update the `<img src>` in `index.html`.
 - **Fonts** (Newsreader, Inter, JetBrains Mono) load from Google Fonts via `@import` in
   `colors_and_type.css`.
 
